@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reviews | Dr. Neha's Physiotherapy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="logo.png" alt="Logo" class="nav-logo-img"></a>
+            <div class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="reviews.html" class="active">Reviews</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="enquire.html" class="btn-primary">Book Appointment</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1>Patient Stories</h1>
+        <p>See what our patients say about their recovery.</p>
+    </div>
+
+    <section class="container" style="margin-bottom: 50px;">
+        <h2 style="text-align:center; margin-bottom: 30px; color: var(--primary);">Video Testimonials</h2>
+        <div class="services-grid">
+            <div class="service-item" style="padding: 10px;">
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/videoseries?list=PLYouListID" frameborder="0" allowfullscreen></iframe>
+                <p style="margin-top:10px;"><b>Patient Success Story</b></p>
+            </div>
+            </div>
+
+        <h2 style="text-align:center; margin: 50px 0 30px; color: var(--primary);">Google Reviews</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>"Dr. Neha is excellent. I had severe back pain and after 10 sessions, I am completely fine. Highly recommended!"</p>
+                <h4 style="margin-top:10px;">- Happy Patient</h4>
+            </div>
+            <div class="service-item">
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>"Best physiotherapy clinic in Kalinga Vihar. The robotic equipment is very advanced."</p>
+                <h4 style="margin-top:10px;">- Recent Visitor</h4>
+            </div>
+        </div>
+    </section>
+
+    <footer><div class="container"><p>&copy; 2026 Dr. Neha's Physiotherapy Clinic.</p></div></footer>
+    <script src="script.js"></script>
+</body>
+</html>

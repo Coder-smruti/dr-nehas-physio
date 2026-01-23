@@ -43,7 +43,7 @@ ul { list-style: none; }
 /* --- 3. Navigation --- */
 nav {
     background: var(--white);
-    padding: 15px 0;
+    padding: 10px 0;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
@@ -52,8 +52,12 @@ nav {
 
 .nav-container { display: flex; justify-content: space-between; align-items: center; }
 
-.logo { font-size: 1.8rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 5px; }
-.logo-highlight { color: var(--accent); }
+/* Logo Image Styling */
+.nav-logo-img {
+    height: 60px; /* Adjusts height nicely */
+    width: auto;
+    display: block;
+}
 
 .nav-links { display: flex; gap: 30px; align-items: center; }
 .nav-links a { color: var(--text-dark); font-weight: 500; font-size: 0.95rem; transition: 0.3s; position: relative; }
@@ -89,7 +93,7 @@ nav {
 
 /* --- 4. Hero Section & Slider --- */
 .hero {
-    height: 90vh; /* Taller for elegance */
+    height: 90vh;
     position: relative;
     display: flex;
     align-items: center;
@@ -100,30 +104,19 @@ nav {
     overflow: hidden;
 }
 
-/* Slider Logic */
 .hero-slider {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    z-index: 0;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
 }
-
 .slide {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-    transform: scale(1.05); /* Slight zoom for effect */
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover; background-position: center;
+    opacity: 0; transition: opacity 1.5s ease-in-out; transform: scale(1.05);
 }
-
 .slide.active { opacity: 1; transform: scale(1); transition: opacity 1.5s ease-in-out, transform 6s; }
 
 .hero-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: var(--gradient); /* Purple overlay */
-    z-index: 1;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--gradient); z-index: 1;
 }
 
 .hero-content { position: relative; z-index: 2; padding: 20px; max-width: 800px; }
@@ -131,13 +124,9 @@ nav {
 .hero-content p { font-size: 1.3rem; margin-bottom: 35px; opacity: 0.95; font-weight: 300; }
 
 .badge {
-    background: rgba(255,255,255,0.25);
-    backdrop-filter: blur(5px);
-    padding: 8px 20px;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+    background: rgba(255,255,255,0.25); backdrop-filter: blur(5px);
+    padding: 8px 20px; border-radius: 30px;
+    font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1.5px;
     border: 1px solid rgba(255,255,255,0.4);
 }
 
@@ -145,80 +134,67 @@ nav {
 
 /* --- 5. Info Cards --- */
 .info-section { margin-top: -120px; position: relative; z-index: 10; padding-bottom: 60px; }
-
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-}
+.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
 
 .info-card {
-    background: var(--white);
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    text-align: center;
-    transition: transform 0.4s ease;
+    background: var(--white); padding: 40px 30px;
+    border-radius: 20px; box-shadow: var(--shadow);
+    text-align: center; transition: transform 0.4s ease;
     border-bottom: 5px solid var(--accent);
 }
-
 .info-card:hover { transform: translateY(-15px); }
 
 .icon-box {
-    width: 70px; height: 70px;
-    background: rgba(118, 185, 0, 0.1);
-    color: var(--accent);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    margin: 0 auto 25px;
+    width: 70px; height: 70px; background: rgba(118, 185, 0, 0.1);
+    color: var(--accent); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; margin: 0 auto 25px;
 }
-
 .info-card h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.5rem; }
 .info-card p { color: var(--text-light); font-size: 1rem; }
 
-/* --- 6. WhatsApp Float --- */
+/* --- 6. WhatsApp Float (Updated) --- */
 .whatsapp-float {
     position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25d366;
-    color: #FFF;
+    bottom: 30px; right: 30px;
+    height: 60px; width: 60px; /* Start as circle */
+    background-color: #25d366; color: #FFF;
     border-radius: 50px;
-    text-align: center;
-    font-size: 35px;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
     z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s;
-    animation: pulse 2s infinite;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    overflow: hidden; /* Hide text initially */
+    transition: width 0.4s ease, background-color 0.3s; /* Smooth expand */
 }
 
-.whatsapp-float:hover { background-color: #128C7E; transform: scale(1.1); }
+.whatsapp-float i { font-size: 35px; }
 
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+.whatsapp-text {
+    display: none; /* Hidden by default */
+    margin-right: 10px;
+    font-weight: 600;
+    white-space: nowrap;
+    font-size: 1rem;
 }
+
+/* Hover Effect: Expand & Show Text */
+.whatsapp-float:hover {
+    width: 220px; /* Expand width */
+    background-color: #128C7E;
+}
+
+.whatsapp-float:hover .whatsapp-text {
+    display: block; /* Show text */
+    animation: fadeIn 0.4s;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
 /* --- 7. Animations --- */
-.fade-in-up {
-    animation: fadeInUp 1s ease-out forwards;
-    opacity: 0;
-    transform: translateY(30px);
-}
+.fade-in-up { animation: fadeInUp 1s ease-out forwards; opacity: 0; transform: translateY(30px); }
 .delay-1 { animation-delay: 0.3s; }
-
-@keyframes fadeInUp {
-    to { opacity: 1; transform: translateY(0); }
-}
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
 /* --- 8. Footer --- */
 footer { background: var(--primary-dark); color: var(--white); padding: 50px 0 20px; text-align: center; }
@@ -243,4 +219,8 @@ footer { background: var(--primary-dark); color: var(--white); padding: 50px 0 2
     .hamburger { display: block; font-size: 1.8rem; color: var(--primary); cursor: pointer; }
     .hero-btns { flex-direction: column; }
     .info-section { margin-top: -60px; }
+    
+    /* On mobile, keep WhatsApp button small (optional) */
+    .whatsapp-float:hover { width: 60px; }
+    .whatsapp-float:hover .whatsapp-text { display: none; }
 }

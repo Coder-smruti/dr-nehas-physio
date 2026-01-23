@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquire | Dr. Neha's Physiotherapy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="logo.png" alt="Logo" class="nav-logo-img"></a>
+            <div class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="enquire.html" class="btn-primary">Book Appointment</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1>Book Your Consultation</h1>
+        <p>Fill the form below and we will contact you shortly.</p>
+    </div>
+
+    <section class="container" style="margin-bottom: 50px;">
+        <div class="form-container">
+            <script type="text/javascript">var submitted=false;</script>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {alert('Thank you! Your enquiry has been sent.'); window.location='index.html';}"></iframe>
+            
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSe9d__BQn0vDzhgYFG0ZCjW8zKD7n0yeT6as4kev_yuck_shQ/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+                
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" name="entry.1027082564" required placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label>Age</label>
+                    <input type="text" name="entry.936325656" placeholder="Your age">
+                </div>
+
+                <div class="form-group">
+                    <label>Gender</label>
+                    <select name="entry.1472351458">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Prefer not to say">Prefer not to say</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Mobile Number *</label>
+                    <input type="tel" name="entry.2024310406" required placeholder="Enter mobile number">
+                </div>
+
+                <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" name="entry.507471755" placeholder="Where are you located?">
+                </div>
+
+                <div class="form-group">
+                    <label>Description of Problem</label>
+                    <textarea name="entry.1368928797" rows="4" placeholder="Briefly describe your pain or issue"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Preferred Appointment Date</label>
+                    <input type="date" name="entry.879095469">
+                </div>
+
+                <div class="form-group">
+                    <label>Mode of Appointment</label>
+                    <select name="entry.834916023">
+                        <option value="Clinic Visit">Clinic Visit</option>
+                        <option value="Home Visit">Home Visit</option>
+                        <option value="Online Consultation">Online Consultation</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width:100%; border:none; cursor:pointer;">Submit Enquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <footer><div class="container"><p>&copy; 2026 Dr. Neha's Physiotherapy Clinic.</p></div></footer>
+    <script src="script.js"></script>
+</body>
+</html>

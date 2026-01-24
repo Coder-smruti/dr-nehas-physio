@@ -224,7 +224,8 @@ footer { background: var(--primary-dark); color: var(--white); padding: 50px 0 2
     .whatsapp-float:hover { width: 60px; }
     .whatsapp-float:hover .whatsapp-text { display: none; }
 }
-/* --- INTERNAL PAGES STYLES (Add to bottom of style.css) --- */
+
+/* --- INTERNAL PAGES STYLES --- */
 
 /* Page Headers */
 .page-header {
@@ -337,199 +338,103 @@ footer { background: var(--primary-dark); color: var(--white); padding: 50px 0 2
     .about-flex { flex-direction: column; }
     .page-header h1 { font-size: 2rem; }
 }
-/* --- PREMIUM REVIEWS PAGE STYLES --- */
 
-/* Section Background & Title */
-.reviews-section {
-    background: linear-gradient(to bottom, var(--off-white), #f0f4f8);
-    padding: 80px 20px 100px;
-    position: relative;
-    overflow: hidden;
+/* --- GOOGLE REVIEWS SCROLLING (Marquee) --- */
+.google-reviews-section {
+    background: #f8f9fa;
+    padding: 50px 0;
+    overflow: hidden; /* Hides the scrollbar */
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
-.reviews-section::before {
-    content: '';
-    position: absolute;
-    top: -10%; left: -10%;
-    width: 40%; height: 40%;
-    background: radial-gradient(circle, rgba(117, 43, 172, 0.05) 0%, transparent 70%);
-    z-index: 0;
-}
-.reviews-title {
+
+.google-badge {
     text-align: center;
-    margin-bottom: 60px;
-    color: var(--primary);
-    position: relative;
-    z-index: 1;
-}
-.reviews-title h2 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-.reviews-title p {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    max-width: 600px;
-    margin: 0 auto;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-/* --- 3D PHONE MOCKUP REELS --- */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+}
+
+.marquee-content {
+    display: inline-flex;
+    gap: 30px;
+    animation: scrollLeft 30s linear infinite; /* The moving animation */
+}
+
+/* Pause scroll when mouse hovers so people can read */
+.marquee-content:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Moves content left */
+}
+
+/* The Review Cards */
+.review-card {
+    width: 350px;
+    background: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    white-space: normal; /* Allows text to wrap inside card */
+    flex-shrink: 0;
+    border-left: 5px solid var(--accent); /* Nice green accent */
+}
+
+.review-card .stars { color: #FFD700; margin-bottom: 10px; }
+.review-card p { font-size: 0.95rem; color: #555; font-style: italic; margin-bottom: 15px; }
+.review-card h4 { color: var(--primary); font-size: 1rem; }
+
+
+/* --- CLEAN VERTICAL INSTAGRAM GRID --- */
 .reels-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 50px;
-    perspective: 1000px; /* Essential for 3D effect */
+    /* Responsive columns */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
     justify-items: center;
-    padding-bottom: 50px;
-    position: relative;
-    z-index: 1;
 }
 
-.reel-item-wrap {
-    width: 340px;
-    height: 620px;
-    position: relative;
-    transform-style: preserve-3d;
-    transform: rotateX(0deg) rotateY(0deg);
-    transition: transform 0.3s ease-out;
-}
-
-/* The Phone Container */
 .reel-item {
-    width: 100%;
-    height: 100%;
-    background: #000; /* Deep black for screen off/loading */
-    border-radius: 45px; /* More pronounced curves */
+    width: 320px;
+    height: 580px; /* PERFECT RATIO for Reels */
+    background: #000; /* Black background while loading */
+    border-radius: 20px; /* Clean rounded corners */
     overflow: hidden;
-    box-shadow: 
-        0 25px 50px -12px rgba(0, 0, 0, 0.35), /* Deep shadow */
-        0 0 0 6px #1a1a1a, /* Inner dark bezel */
-        0 0 0 8px #333; /* Outer lighter bezel */
-    position: relative;
-    transform: translateZ(20px); /* Pops out slightly */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Lifted shadow */
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
 }
 
-/* Realistic Notch & Speaker */
-.reel-item::before {
-    content: '';
-    position: absolute;
-    top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 30px;
-    background: #000;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    z-index: 3;
-}
-.reel-item::after {
-    content: '';
-    position: absolute;
-    top: 22px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 6px;
-    background: #333;
-    border-radius: 10px;
-    z-index: 4;
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.8);
+/* Subtle Lift Effect on Hover */
+.reel-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(117, 43, 172, 0.2); /* Purple shadow glow */
 }
 
-/* Iframe Styling */
 .reel-item iframe {
     width: 100%;
     height: 100%;
     border: none;
-    display: block;
-    border-radius: 38px; /* Matches inner screen curve */
-    position: relative;
-    z-index: 1;
-    /* Slight scale to hide edge artifacts */
-    transform: scale(1.02); 
+    /* This fix prevents Instagram from being cut off */
+    display: block; 
 }
 
-/* --- PREMIUM TEXT REVIEW CARDS --- */
-.review-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-    position: relative;
-    z-index: 1;
-}
-
-.review-card {
-    background: var(--white);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    position: relative;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border-top: 4px solid transparent;
-}
-
-.review-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(117, 43, 172, 0.15);
-    border-top-color: var(--accent);
-}
-
-.review-icon {
-    font-size: 2.5rem;
-    color: rgba(117, 43, 172, 0.15); /* Subtle purple */
-    position: absolute;
-    top: 30px;
-    left: 30px;
-}
-
-.review-content {
-    position: relative;
-    z-index: 1;
-    padding-left: 20px;
-}
-
-.review-stars {
-    color: #FFD700; /* Gold */
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-}
-
-.review-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: var(--text-dark);
-    margin-bottom: 20px;
-    font-style: italic;
-}
-
-.review-author {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: var(--primary);
-    display: flex;
-    align-items: center;
-}
-.review-author::before {
-    content: '';
-    display: inline-block;
-    width: 30px;
-    height: 2px;
-    background: var(--accent);
-    margin-right: 10px;
-}
-
-/* Responsive Adjustments */
+/* Mobile Responsive */
 @media (max-width: 768px) {
-    .reel-item-wrap {
-        width: 300px;
-        height: 560px;
-    }
-    .review-card {
-        padding: 30px;
-    }
-    .review-title h2 {
-        font-size: 2rem;
-    }
+    .scrolling-content { animation: scroll 20s linear infinite; }
+    .reel-item { width: 100%; height: 550px; }
 }

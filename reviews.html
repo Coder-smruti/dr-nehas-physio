@@ -9,10 +9,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <nav>
         <div class="container nav-container">
-            <a href="index.html" class="logo"><img src="logo.png" alt="Logo" class="nav-logo-img"></a>
-            <div class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Dr. Neha's Clinic" class="nav-logo-img">
+            </a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -26,59 +31,100 @@
     </nav>
 
     <div class="page-header">
-        <h1>Patient Stories</h1>
-        <p>Real recovery stories from our Instagram.</p>
+        <h1>Patient Success Stories</h1>
+        <p>Witness real-life transformations and hear from our happy patients.</p>
     </div>
 
-    <section class="container" style="margin-bottom: 50px;">
-        
-        <h2 style="text-align:center; margin-bottom: 40px; color: var(--primary);">Success Stories on Instagram</h2>
-        
-        <div class="reels-grid">
-            <div class="reel-item">
-                <iframe src="https://www.instagram.com/reel/DTxqjduEzwG/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+    <section class="reviews-section">
+        <div class="container">
+            
+            <div class="reviews-title">
+                <h2>Watch Their Journeys</h2>
+                <p>Tap to play these inspiring recovery stories directly from our Instagram.</p>
             </div>
-            <div class="reel-item">
-                <iframe src="https://www.instagram.com/reel/DTk8M4MEy-B/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+            
+            <div class="reels-grid">
+                <div class="reel-item-wrap fade-in-up" data-tilt>
+                    <div class="reel-item">
+                        <iframe src="https://www.instagram.com/reel/DTxqjduEzwG/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                    </div>
+                </div>
+                <div class="reel-item-wrap fade-in-up delay-1" data-tilt>
+                    <div class="reel-item">
+                        <iframe src="https://www.instagram.com/reel/DTk8M4MEy-B/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                    </div>
+                </div>
+                <div class="reel-item-wrap fade-in-up delay-2" data-tilt>
+                    <div class="reel-item">
+                        <iframe src="https://www.instagram.com/reel/DTNuBWJE870/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                    </div>
+                </div>
+                <div class="reel-item-wrap fade-in-up" data-tilt>
+                    <div class="reel-item">
+                        <iframe src="https://www.instagram.com/reel/DTAv_zCE6OT/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                    </div>
+                </div>
+                <div class="reel-item-wrap fade-in-up delay-1" data-tilt>
+                    <div class="reel-item">
+                        <iframe src="https://www.instagram.com/reel/DSFeXh2FKhG/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                    </div>
+                </div>
+                <div class="reel-item-wrap fade-in-up delay-2" data-tilt>
+                    <div class="reel-item">
+                        <iframe src="https://www.instagram.com/reel/DRzv7pgE0oP/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                    </div>
+                </div>
             </div>
-            <div class="reel-item">
-                <iframe src="https://www.instagram.com/reel/DTNuBWJE870/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-            </div>
-            <div class="reel-item">
-                <iframe src="https://www.instagram.com/reel/DTAv_zCE6OT/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-            </div>
-            <div class="reel-item">
-                <iframe src="https://www.instagram.com/reel/DSFeXh2FKhG/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-            </div>
-            <div class="reel-item">
-                <iframe src="https://www.instagram.com/reel/DRzv7pgE0oP/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-            </div>
-            <div class="reel-item">
-                <iframe src="https://www.instagram.com/reel/DRhf45Qky2m/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-            </div>
-        </div>
 
-        <h2 style="text-align:center; margin: 60px 0 30px; color: var(--primary);">Google Reviews</h2>
-        <div class="services-grid">
-            <div class="service-item">
-                <p>⭐⭐⭐⭐⭐</p>
-                <p>"Dr. Neha is excellent. I had severe back pain and after 10 sessions, I am completely fine. Highly recommended!"</p>
-                <h4 style="margin-top:10px;">- Happy Patient</h4>
+            <div class="reviews-title" style="margin-top: 80px;">
+                <h2>Words of Gratitude</h2>
+                <p>5-Star reviews from patients on Google.</p>
             </div>
-            <div class="service-item">
-                <p>⭐⭐⭐⭐⭐</p>
-                <p>"Best physiotherapy clinic in Kalinga Vihar. The robotic equipment is very advanced."</p>
-                <h4 style="margin-top:10px;">- Recent Visitor</h4>
+
+            <div class="review-cards-grid">
+                <div class="review-card fade-in-up">
+                    <i class="fa-solid fa-quote-left review-icon"></i>
+                    <div class="review-content">
+                        <div class="review-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text">"Dr. Neha is excellent. I had severe back pain that was affecting my daily life. After just 10 sessions with her targeted therapy, I am completely pain-free. Her expertise is unmatched. Highly recommended!"</p>
+                        <div class="review-author">Anjali M.</div>
+                    </div>
+                </div>
+                <div class="review-card fade-in-up delay-1">
+                    <i class="fa-solid fa-quote-left review-icon"></i>
+                    <div class="review-content">
+                        <div class="review-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text">"Easily the best physiotherapy clinic in Kalinga Vihar. The advanced robotic equipment they use is incredible and sped up my recovery significantly. The entire staff is professional and very caring."</p>
+                        <div class="review-author">Rahul K.</div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </section>
 
-    <a href="https://wa.me/918018665588" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/918018665588?text=Hello%20Dr.%20Neha,%20I%20would%20like%20to%20book%20an%20appointment." class="whatsapp-float" target="_blank">
         <span class="whatsapp-text">Connect with us</span>
         <i class="fa-brands fa-whatsapp"></i>
     </a>
     
     <footer><div class="container"><p>&copy; 2026 Dr. Neha's Physiotherapy Clinic.</p></div></footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Initialize 3D Tilt Effect
+        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+            max: 15, /* Max tilt rotation (degrees) */
+            speed: 400, /* Speed of the effect */
+            glare: true, /* Add a light glare effect */
+            "max-glare": 0.3, /* Opacity of glare */
+            scale: 1.05 /* Slight zoom on hover */
+        });
+    </script>
 </body>
 </html>

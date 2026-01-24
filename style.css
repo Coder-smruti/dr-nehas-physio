@@ -337,40 +337,50 @@ footer { background: var(--primary-dark); color: var(--white); padding: 50px 0 2
     .about-flex { flex-direction: column; }
     .page-header h1 { font-size: 2rem; }
 }
-/* --- INSTAGRAM REELS GRID (Add to bottom of style.css) --- */
+/* --- INSTAGRAM REELS - PREMIUM PHONE STYLE --- */
+
 .reels-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Wider columns for reels */
-    gap: 20px;
-    padding-bottom: 40px;
-    justify-content: center;
+    /* This ensures 3 columns on desktop, but they won't stretch too wide */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px; /* More breathing room */
+    padding: 20px;
+    justify-items: center; /* Centers the phones in their grid cells */
 }
 
 .reel-item {
+    width: 340px; /* Force standard phone width */
+    height: 600px; /* Fixed height for consistency */
     background: var(--white);
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    height: 550px; /* Fixed height for Reel embeds */
-    border: 1px solid #eee;
-    transition: transform 0.3s ease;
+    border-radius: 35px; /* Rounded corners like an iPhone */
+    overflow: hidden; /* Clips the sharp corners of the video */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15); /* Premium deep shadow */
+    border: 8px solid #000; /* The "Phone Bezel" look */
+    position: relative;
+    transition: transform 0.4s ease;
 }
 
+/* Hover Effect: The phone floats up */
 .reel-item:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary);
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(117, 43, 172, 0.25); /* Purple shadow on hover */
+    border-color: var(--primary); /* Bezel turns purple on hover */
 }
 
+/* Force the iframe to fill the phone container */
 .reel-item iframe {
     width: 100%;
     height: 100%;
     border: none;
-    overflow: hidden; 
+    display: block;
+    /* This tricks Instagram into fitting better */
+    transform: scale(1.01); 
 }
 
-/* Responsive adjustment for mobiles */
+/* Responsive: On mobile, make it fit the screen */
 @media (max-width: 768px) {
     .reel-item {
-        height: 480px; /* Slightly shorter on mobile */
+        width: 300px; /* Slightly smaller on mobile phones */
+        height: 550px;
     }
 }

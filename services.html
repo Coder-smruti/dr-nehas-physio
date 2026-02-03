@@ -9,10 +9,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <nav>
         <div class="container nav-container">
-            <a href="index.html" class="logo"><img src="logo.png" alt="Logo" class="nav-logo-img"></a>
-            <div class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Dr. Neha's Clinic" class="nav-logo-img">
+            </a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html" class="active">Services</a></li>
@@ -26,58 +31,118 @@
     </nav>
 
     <div class="page-header">
-        <h1>Our Services</h1>
-        <p>Advanced Technologies & Personalized Care</p>
+        <h1>Our Specialized Treatments</h1>
+        <p>Comprehensive care tailored to your recovery needs.</p>
     </div>
 
-    <section class="container">
-        <div class="services-grid">
-            <div class="service-item">
-                <i class="fa-solid fa-bone service-icon"></i>
-                <h3>Orthopaedic Care</h3>
-                <p>Treatment for back pain, knee pain, fractures, and arthritis.</p>
+    <section class="container" style="margin-bottom: 80px;">
+        <div class="services-card-grid">
+            
+            <div class="service-card">
+                <div class="s-img" style="background-image: url('https://images.unsplash.com/photo-1576091160550-217358c7db81?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="s-content">
+                    <h3>Musculoskeletal Physio</h3>
+                    <p>Expert care for muscles, joints, and bones. Ideal for back pain, neck pain, and arthritis management.</p>
+                </div>
             </div>
-            <div class="service-item">
-                <i class="fa-solid fa-brain service-icon"></i>
-                <h3>Neurological Rehab</h3>
-                <p>Specialized care for stroke, paralysis, and nerve injuries.</p>
+
+            <div class="service-card">
+                <div class="s-img" style="background-image: url('https://images.unsplash.com/photo-1559757175-7b2497f56698?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="s-content">
+                    <h3>Neurorehabilitation</h3>
+                    <p>Specialized therapy for stroke, paralysis, and nerve injuries to restore motor function and independence.</p>
+                </div>
             </div>
-            <div class="service-item">
-                <i class="fa-solid fa-running service-icon"></i>
-                <h3>Sports Injury</h3>
-                <p>Fast-track recovery for athletes, sprains, and muscle tears.</p>
+
+            <div class="service-card">
+                <div class="s-img" style="background-image: url('https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="s-content">
+                    <h3>Sports Rehab</h3>
+                    <p>Fast-track recovery for athletes suffering from sprains, ligament tears, and muscle injuries.</p>
+                </div>
             </div>
-            <div class="service-item">
-                <i class="fa-solid fa-child service-icon"></i>
-                <h3>Paediatric Physio</h3>
-                <p>Gentle care for developmental delays and child movement issues.</p>
+
+            <div class="service-card">
+                <div class="s-img" style="background-image: url('https://plus.unsplash.com/premium_photo-1661777196224-bdae4af2b775?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="s-content">
+                    <h3>Paediatric Physio</h3>
+                    <p>Gentle, play-based therapy for children with developmental delays, cerebral palsy, and congenital conditions.</p>
+                </div>
             </div>
-            <div class="service-item">
-                <i class="fa-solid fa-snowflake service-icon" style="color: #00d2ff;"></i>
-                <h3>Ice Bath Therapy</h3>
-                <p>Advanced recovery technique to reduce inflammation and muscle soreness.</p>
+
+            <div class="service-card">
+                <div class="s-img" style="background-image: url('https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="s-content">
+                    <h3>Pre & Post Surgical Rehab</h3>
+                    <p>Preparation before surgery and guided recovery after operations like knee or hip replacements.</p>
+                </div>
             </div>
-            <div class="service-item">
-                <i class="fa-solid fa-robot service-icon"></i>
-                <h3>Robotic Hand Exerciser</h3>
-                <p>State-of-the-art robotic assistance for hand paralysis recovery.</p>
+
+            <div class="service-card">
+                <div class="s-img" style="background-image: url('https://images.unsplash.com/photo-1531952304677-743320340332?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="s-content">
+                    <h3>Pre & Post Partum Rehab</h3>
+                    <p>Specialized care for women during and after pregnancy to manage back pain and core strength.</p>
+                </div>
             </div>
-            <div class="service-item">
-                <i class="fa-solid fa-syringe service-icon"></i>
-                <h3>Dry Needling</h3>
-                <p>Relief for muscle knots and chronic pain.</p>
+
+            <div class="service-card">
+                <div class="s-img" style="background-image: url('https://images.unsplash.com/photo-1518310383802-640c2de311b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="s-content">
+                    <h3>Pilates</h3>
+                    <p>Core strengthening exercises to improve posture, flexibility, and overall body balance.</p>
+                </div>
             </div>
-            <div class="service-item">
-                <i class="fa-solid fa-heart-pulse service-icon"></i>
-                <h3>Cupping Therapy</h3>
-                <p>Ancient technique to improve blood flow and relaxation.</p>
+
+            <div class="service-card">
+                <div class="s-img" style="background-image: url('https://media.istockphoto.com/id/1142813333/photo/alternative-medicine.jpg?s=612x612&w=0&k=20&c=X7_sFK-X6Qnry-ZkTB_yYEMt-r_WqQqZ_lJtWqWqX_E=');"></div>
+                <div class="s-content">
+                    <h3>Cupping Therapy</h3>
+                    <p>Ancient technique to improve blood flow, relieve muscle tension, and promote relaxation.</p>
+                </div>
             </div>
+
+            <div class="service-card">
+                <div class="s-img" style="background-image: url('https://media.istockphoto.com/id/1325327292/photo/acupuncture-patient-being-treated-with-needles.jpg?s=612x612&w=0&k=20&c=J9yJqYqqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqYqY=');"></div>
+                <div class="s-content">
+                    <h3>Dry Needling</h3>
+                    <p>Targeted therapy using thin needles to release muscle knots (trigger points) and reduce chronic pain.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="s-img" style="background-image: url('https://images.unsplash.com/photo-1599447332306-0b86f8750d0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="s-content">
+                    <h3>Kinesio Taping</h3>
+                    <p>Supportive taping technique to stabilize joints and muscles without restricting movement.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="s-img" style="background-image: url('https://images.unsplash.com/photo-1600618528240-fb9fc964b853?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="s-content">
+                    <h3>Chiropractic & Osteopathy</h3>
+                    <p>Manual adjustments to align the spine and skeletal system for better health and pain relief.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="s-img" style="background-image: url('https://images.unsplash.com/photo-1544367563-12123d8965cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="s-content">
+                    <h3>IASTM</h3>
+                    <p>Instrument-Assisted Soft Tissue Mobilization to break down scar tissue and improve mobility.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <footer>
-        <div class="container"><p>&copy; 2026 Dr. Neha's Physiotherapy Clinic.</p></div>
-    </footer>
+    <a href="https://wa.me/918018665588?text=Hello%20Dr.%20Neha,%20I%20would%20like%20to%20book%20an%20appointment." class="whatsapp-float" target="_blank">
+        <span class="whatsapp-text">Connect with us</span>
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    
+    <footer><div class="container"><p>&copy; 2026 Dr. Neha's Physiotherapy Clinic.</p></div></footer>
     <script src="script.js"></script>
 </body>
 </html>

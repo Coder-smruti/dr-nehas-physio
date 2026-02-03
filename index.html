@@ -3,32 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Neha's Physiotherapy Clinic | Premium Rehab in Bhubaneswar</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Dr. Neha's Physiotherapy Clinic</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-
-    <div class="top-bar">
-        <div class="container">
-            <span><i class="fa-solid fa-phone"></i> +91 80186 65588</span>
-            <span><i class="fa-solid fa-clock"></i> Mon-Sat: 8AM - 9PM</span>
-        </div>
-    </div>
-
     <nav>
         <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <img src="logo.png" alt="Dr. Neha's Clinic Logo" class="nav-logo-img">
-            </a>
-            
-            <div class="hamburger" onclick="toggleMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-
+            <a href="index.html" class="logo"><img src="logo.png" alt="Logo" class="nav-logo-img"></a>
+            <div class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -43,69 +28,51 @@
 
     <header class="hero">
         <div class="hero-slider">
-            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
+            <div class="slide active" style="background-image: url('clinic-1.jpg'), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920');"></div>
+            <div class="slide" style="background-image: url('clinic-2.jpg'), url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1920');"></div>
+            <div class="slide" style="background-image: url('clinic-3.jpg'), url('https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1920');"></div>
         </div>
-        
         <div class="hero-overlay"></div>
-        
-        <div class="hero-content fade-in-up">
+        <div class="hero-content">
             <span class="badge">Trusted by Patients Since 2022</span>
             <h1>A Healing Touch</h1>
-            <p>Experience world-class rehabilitation with advanced robotics & personalized care.<br>Specialized in Ortho, Neuro, and Sports Injury.</p>
+            <p>Personalized Advanced Rehabilitation for a Pain-Free Life.</p>
             <div class="hero-btns">
-                <a href="enquire.html" class="btn-primary">Enquire Now <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="enquire.html" class="btn-primary">Enquire Now</a>
                 <a href="services.html" class="btn-secondary">View Services</a>
             </div>
         </div>
     </header>
 
-    <section class="info-section fade-in-up delay-1">
-        <div class="container">
-            <div class="info-grid">
-                <div class="info-card">
-                    <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
-                    <h3>Visit Us</h3>
-                    <p>K4-891, Kalinga Vihar,<br>Bhubaneswar, Odisha</p>
-                </div>
-                <div class="info-card">
-                    <div class="icon-box"><i class="fa-solid fa-phone-volume"></i></div>
-                    <h3>Call Us</h3>
-                    <p>+91 80186 65588<br>info@drnehasphysio.com</p>
-                </div>
-                <div class="info-card">
-                    <div class="icon-box"><i class="fa-regular fa-clock"></i></div>
-                    <h3>Opening Hours</h3>
-                    <p>Mon – Sat: 8AM – 9PM<br>Sun: 8AM – 1PM</p>
-                </div>
-            </div>
+    <section class="vision-section">
+        <div class="container vision-content">
+            <h2>Our Vision</h2>
+            <p>Started in the year 2022 with a vision by Dr. Neha, our clinic aims to provide world-class physiotherapy services to the people of Bhubaneswar. We believe in a holistic approach that combines modern technology with compassionate care to restore movement and improve quality of life.</p>
         </div>
     </section>
 
-    <a href="https://wa.me/918018665588?text=Hello%20Dr.%20Neha,%20I%20would%20like%20to%20book%20an%20appointment." class="whatsapp-float" target="_blank">
-        <span class="whatsapp-text">Connect with us</span>
-        <i class="fa-brands fa-whatsapp"></i>
+    <a href="https://wa.me/918018665588?text=Hello%20Dr.%20Neha,%20I%20would%20like%20to%20consult%20a%20physiotherapist." class="doctor-float" target="_blank">
+        <div class="float-img-box"><img src="dr-neha.jpg" alt="Dr. Neha"></div>
+        <div class="float-text"><span>Need Help?</span><span>Consult Physio</span></div>
     </a>
 
     <footer>
-        <div class="container footer-content">
-            <div class="footer-col">
-                <h3>Dr. Neha's Physio</h3>
-                <p>Restoring movement and improving quality of life with advanced physiotherapy care.</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/drneha_physiotherapy_clinic/"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/p/Dr-Nehas-physiotherapy-clinic-100084240311265/"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://www.linkedin.com/company/dr-neha-s-physiotherapy-clinic/"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://www.youtube.com/@drneha_physio_clinic"><i class="fa-brands fa-youtube"></i></a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3>Dr. Neha's Physiotherapy Clinic</h3>
+                    <p>Restoring movement and improving quality of life with advanced physiotherapy care.</p>
+                </div>
+                <div class="footer-right">
+                    <a href="https://www.instagram.com/drneha_physiotherapy_clinic/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/p/Dr-Nehas-physiotherapy-clinic-100084240311265/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/dr-neha-s-physiotherapy-clinic/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com/@drneha_physio_clinic" target="_blank"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Dr. Neha's Physiotherapy Clinic. All Rights Reserved.</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Dr. Neha's Physiotherapy Clinic. All Rights Reserved.</p></div>
         </div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>

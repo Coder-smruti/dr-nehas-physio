@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Neha's Physiotherapy Clinic | Bhubaneswar</title>
+    <title>Dr. Neha's Physiotherapy Clinic | Best Physio in Bhubaneswar</title>
     <link rel="icon" type="image/png" href="favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Fixed Book Appointment Button (Like Samson Agri) -->
+    <a href="enquire.html" class="fixed-book-btn">
+        <i class="fa-solid fa-calendar-check"></i>
+        <span>Book Appointment</span>
+    </a>
 
     <nav>
         <div class="container nav-container">
@@ -26,58 +32,370 @@
                 <li><a href="reviews.html">Reviews</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="career.html">Career</a></li>
-                <li><a href="enquire.html" class="btn-primary">Book Appointment</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero">
+    <!-- HERO SECTION WITH AUTO-PLAYING SERVICES -->
+    <header class="hero-new">
         <div class="hero-slider">
-            <!-- REPLACE THESE WITH YOUR ACTUAL CLINIC IMAGES -->
             <div class="slide active" style="background-image: url('clinic-1.jpg');"></div>
             <div class="slide" style="background-image: url('clinic-2.jpg');"></div>
             <div class="slide" style="background-image: url('clinic-3.jpg');"></div>
-            <!-- Add more slides as needed -->
         </div>
         <div class="hero-overlay"></div>
-        <div class="hero-content fade-in-up">
-            <span class="badge">Trusted by Patients Since 2022</span>
-            <h1>A Healing Touch</h1>
-            <p>Personalized Advanced Rehabilitation for a Pain-Free Life.<br>Specialized in Ortho, Neuro, and Sports Injury.</p>
-            <div class="hero-btns">
-                <a href="enquire.html" class="btn-primary">Enquire Now</a>
-                <a href="services.html" class="btn-secondary">View Services</a>
+        <div class="hero-content-new">
+            <span class="badge-new">Trusted by 500+ Patients Since 2022</span>
+            <h1 class="hero-title">Expert Physiotherapy Care<br>For a <span class="highlight-text">Pain-Free Life</span></h1>
+            <p class="hero-subtitle">Advanced Rehabilitation • Personalized Treatment • World-Class Facilities</p>
+            <div class="hero-buttons">
+                <a href="enquire.html" class="btn-hero-primary">
+                    <i class="fa-solid fa-calendar-check"></i> Book Consultation
+                </a>
+                <a href="tel:+918018665588" class="btn-hero-secondary">
+                    <i class="fa-solid fa-phone"></i> Call Now
+                </a>
             </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll to explore</p>
         </div>
     </header>
 
-    <section class="info-section fade-in-up delay-1">
+    <!-- INFO CARDS (Enhanced) -->
+    <section class="info-section-new">
         <div class="container">
-            <div class="info-grid">
-                <div class="info-card">
-                    <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="info-grid-new">
+                <div class="info-card-new" data-aos="fade-up">
+                    <div class="info-icon-new">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
                     <h3>Visit Us</h3>
-                    <p>K4-891, Kalinga Vihar,<br>Bhubaneswar, Odisha</p>
+                    <p>K4-891, Kalinga Vihar<br>Bhubaneswar, Odisha</p>
+                    <a href="https://maps.google.com" target="_blank" class="info-link">Get Directions →</a>
                 </div>
-                <div class="info-card">
-                    <div class="icon-box"><i class="fa-solid fa-phone-volume"></i></div>
+                
+                <div class="info-card-new" data-aos="fade-up" data-aos-delay="100">
+                    <div class="info-icon-new">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </div>
                     <h3>Call Us</h3>
                     <p>+91 80186 65588<br>info@drnehasphysio.com</p>
+                    <a href="tel:+918018665588" class="info-link">Call Now →</a>
                 </div>
-                <div class="info-card">
-                    <div class="icon-box"><i class="fa-regular fa-clock"></i></div>
+                
+                <div class="info-card-new" data-aos="fade-up" data-aos-delay="200">
+                    <div class="info-icon-new">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
                     <h3>Opening Hours</h3>
                     <p>Mon – Sat: 8AM – 9PM<br>Sun: 8AM – 1PM</p>
+                    <a href="enquire.html" class="info-link">Book Slot →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- VISION SECTION - Now on Homepage -->
-    <section class="vision-section">
-        <div class="container vision-content">
-            <h2>Our Vision</h2>
-            <p>Started in the year 2022 with a vision by Dr. Neha, our clinic aims to provide world-class physiotherapy services to the people of Bhubaneswar. We believe in a holistic approach that combines modern technology with compassionate care to restore movement and improve quality of life.</p>
+    <!-- AUTO-PLAYING SERVICES CAROUSEL (Like Samson Agri Products) -->
+    <section class="services-carousel-section">
+        <div class="container">
+            <div class="section-header-new" data-aos="fade-up">
+                <span class="section-badge">Our Specialized Treatments</span>
+                <h2 class="section-title-new">Comprehensive Physiotherapy Services</h2>
+                <p class="section-subtitle">Expert care across all specializations for your complete recovery</p>
+            </div>
+
+            <div class="services-carousel-container">
+                <div class="services-carousel" id="servicesCarousel">
+                    
+                    <div class="service-slide">
+                        <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1576091160550-217358c7db81?w=600');"></div>
+                        <div class="service-content-overlay">
+                            <h3>Musculoskeletal Physio</h3>
+                            <p>Expert care for muscles, joints & bones</p>
+                        </div>
+                    </div>
+
+                    <div class="service-slide">
+                        <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1559757175-7b2497f56698?w=600');"></div>
+                        <div class="service-content-overlay">
+                            <h3>Neurorehabilitation</h3>
+                            <p>Recovery from stroke & nerve injuries</p>
+                        </div>
+                    </div>
+
+                    <div class="service-slide">
+                        <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600');"></div>
+                        <div class="service-content-overlay">
+                            <h3>Sports Rehabilitation</h3>
+                            <p>Fast-track recovery for athletes</p>
+                        </div>
+                    </div>
+
+                    <div class="service-slide">
+                        <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600');"></div>
+                        <div class="service-content-overlay">
+                            <h3>Paediatric Physio</h3>
+                            <p>Gentle care for children's development</p>
+                        </div>
+                    </div>
+
+                    <div class="service-slide">
+                        <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=600');"></div>
+                        <div class="service-content-overlay">
+                            <h3>Pre & Post Surgical Rehab</h3>
+                            <p>Complete surgical recovery support</p>
+                        </div>
+                    </div>
+
+                    <div class="service-slide">
+                        <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1531952304677-743320340332?w=600');"></div>
+                        <div class="service-content-overlay">
+                            <h3>Women's Health</h3>
+                            <p>Pre & post-partum rehabilitation</p>
+                        </div>
+                    </div>
+
+                    <div class="service-slide">
+                        <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=600');"></div>
+                        <div class="service-content-overlay">
+                            <h3>Pilates</h3>
+                            <p>Core strength & flexibility training</p>
+                        </div>
+                    </div>
+
+                    <div class="service-slide">
+                        <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=600');"></div>
+                        <div class="service-content-overlay">
+                            <h3>Cupping Therapy</h3>
+                            <p>Traditional pain relief technique</p>
+                        </div>
+                    </div>
+
+                    <div class="service-slide">
+                        <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600');"></div>
+                        <div class="service-content-overlay">
+                            <h3>Dry Needling</h3>
+                            <p>Targeted muscle pain release</p>
+                        </div>
+                    </div>
+
+                    <div class="service-slide">
+                        <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1599447332306-0b86f8750d0a?w=600');"></div>
+                        <div class="service-content-overlay">
+                            <h3>Kinesio Taping</h3>
+                            <p>Joint support & stabilization</p>
+                        </div>
+                    </div>
+
+                    <div class="service-slide">
+                        <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1600618528240-fb9fc964b853?w=600');"></div>
+                        <div class="service-content-overlay">
+                            <h3>Chiropractic Care</h3>
+                            <p>Spinal alignment & adjustment</p>
+                        </div>
+                    </div>
+
+                    <div class="service-slide">
+                        <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1544367563-12123d8965cd?w=600');"></div>
+                        <div class="service-content-overlay">
+                            <h3>IASTM</h3>
+                            <p>Soft tissue mobilization therapy</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" onclick="moveCarousel(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="carousel-btn next" onclick="moveCarousel(1)"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="services.html" class="btn-view-all">View All Services →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR VISION SECTION -->
+    <section class="vision-section-new">
+        <div class="container">
+            <div class="vision-content-new" data-aos="fade-up">
+                <span class="section-badge">Our Mission</span>
+                <h2>Transforming Lives Through Expert Care</h2>
+                <p>Started in the year 2022 with a vision by Dr. Neha, our clinic aims to provide world-class physiotherapy services to the people of Bhubaneswar. We believe in a holistic approach that combines modern technology with compassionate care to restore movement and improve quality of life.</p>
+                <div class="vision-features">
+                    <div class="vision-feature-item">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>Evidence-Based Treatment</span>
+                    </div>
+                    <div class="vision-feature-item">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>Advanced Technology</span>
+                    </div>
+                    <div class="vision-feature-item">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>Personalized Care Plans</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ANIMATED STATS SECTION (Like Samson Agri) -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                
+                <div class="stat-card-new" data-aos="zoom-in">
+                    <div class="stat-icon-new">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="stat-number" data-count="500">0</div>
+                    <div class="stat-plus">+</div>
+                    <div class="stat-label">Happy Patients</div>
+                </div>
+
+                <div class="stat-card-new" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-icon-new">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <div class="stat-number" data-count="20">0</div>
+                    <div class="stat-plus">+</div>
+                    <div class="stat-label">Expert Team Members</div>
+                </div>
+
+                <div class="stat-card-new" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-icon-new">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div class="stat-number" data-count="4">0</div>
+                    <div class="stat-plus">+</div>
+                    <div class="stat-label">Years of Excellence</div>
+                </div>
+
+                <div class="stat-card-new" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-icon-new">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="stat-number" data-count="4">0</div>
+                    <div class="stat-label-decimal">.9 Star Rating</div>
+                    <div class="stat-label">Google Reviews</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section class="why-choose-new">
+        <div class="container">
+            <div class="section-header-new text-center" data-aos="fade-up">
+                <span class="section-badge">Why Choose Us</span>
+                <h2 class="section-title-new">Your Trusted Partner in Recovery</h2>
+            </div>
+
+            <div class="why-grid">
+                
+                <div class="why-card" data-aos="fade-up">
+                    <div class="why-icon">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3>Advanced Technology</h3>
+                    <p>State-of-the-art robotic equipment and laser therapy for faster recovery</p>
+                </div>
+
+                <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="why-icon">
+                        <i class="fa-solid fa-user-md"></i>
+                    </div>
+                    <h3>Expert Therapists</h3>
+                    <p>Highly qualified physiotherapists with specialized certifications</p>
+                </div>
+
+                <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="why-icon">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+                    <h3>Personalized Plans</h3>
+                    <p>Customized treatment programs designed for your unique condition</p>
+                </div>
+
+                <div class="why-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="why-icon">
+                        <i class="fa-solid fa-home"></i>
+                    </div>
+                    <h3>Home Visits</h3>
+                    <p>Convenient at-home physiotherapy sessions for your comfort</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MEET DR. NEHA SECTION (With Visible Photo) -->
+    <section class="meet-doctor-section">
+        <div class="container">
+            <div class="doctor-container">
+                <div class="doctor-image-side" data-aos="fade-right">
+                    <div class="doctor-image-wrapper">
+                        <!-- REPLACE WITH YOUR ACTUAL DR. NEHA IMAGE -->
+                        <img src="dr-neha.jpg" alt="Dr. Neha" class="doctor-main-image">
+                        <div class="doctor-badge-float">
+                            <i class="fa-solid fa-certificate"></i>
+                            <span>MPT Ortho</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="doctor-content-side" data-aos="fade-left">
+                    <span class="section-badge">Meet Our Founder</span>
+                    <h2>Dr. Neha</h2>
+                    <p class="doctor-designation">Lead Physiotherapist • MPT Ortho</p>
+                    <p class="doctor-bio">Dr. Neha is a dedicated specialist with years of experience in treating complex orthopaedic and neurological conditions. Her passion for helping patients achieve pain-free lives drives our clinic's commitment to excellence. She combines evidence-based practices with compassionate care to deliver outstanding results.</p>
+                    
+                    <div class="doctor-achievements">
+                        <div class="achievement-item">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>Masters in Physiotherapy (Ortho)</span>
+                        </div>
+                        <div class="achievement-item">
+                            <i class="fa-solid fa-certificate"></i>
+                            <span>Advanced Certifications</span>
+                        </div>
+                        <div class="achievement-item">
+                            <i class="fa-solid fa-users"></i>
+                            <span>500+ Patients Treated</span>
+                        </div>
+                    </div>
+
+                    <a href="about.html" class="btn-learn-more">Learn More About Us →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2>Ready to Start Your Recovery Journey?</h2>
+                <p>Book your consultation today and take the first step towards a pain-free life</p>
+                <div class="cta-buttons">
+                    <a href="enquire.html" class="btn-cta-primary">
+                        <i class="fa-solid fa-calendar-check"></i> Book Appointment
+                    </a>
+                    <a href="tel:+918018665588" class="btn-cta-secondary">
+                        <i class="fa-solid fa-phone"></i> Call: +91 80186 65588
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -91,21 +409,17 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                
                 <div class="footer-left">
                     <div class="footer-logo-text">Dr. Neha's Physiotherapy Clinic</div>
                     <p class="footer-tagline">Restoring movement and improving quality of life with advanced physiotherapy care.</p>
                 </div>
-
                 <div class="footer-right">
-                    <a href="https://www.instagram.com/drneha_physiotherapy_clinic/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/p/Dr-Nehas-physiotherapy-clinic-100084240311265/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.linkedin.com/company/dr-neha-s-physiotherapy-clinic/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://www.youtube.com/@drneha_physio_clinic" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/drneha_physiotherapy_clinic/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/p/Dr-Nehas-physiotherapy-clinic-100084240311265/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/dr-neha-s-physiotherapy-clinic/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com/@drneha_physio_clinic" target="_blank"><i class="fa-brands fa-youtube"></i></a>
                 </div>
-
             </div>
-
             <div class="footer-bottom">
                 <p>&copy; 2026 Dr. Neha's Physiotherapy Clinic. All Rights Reserved.</p>
             </div>
@@ -113,5 +427,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="home-animations.js"></script>
 </body>
 </html>

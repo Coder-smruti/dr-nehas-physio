@@ -1,32 +1,30 @@
-/* Ultra-Modern Home Animations - Enhanced */
+/* HOME ANIMATIONS - COMPLETE FILE */
 
-// Service name mappings for navigation
-const serviceMap = {
-    'Musculoskeletal Physio': 'musculoskeletal-physiotherapy',
-    'Neurorehabilitation': 'neurorehabilitation',
-    'Sports Rehabilitation': 'sports-rehabilitation',
-    'Paediatric Physio': 'paediatric-physiotherapy',
-    'Pre & Post Surgical Rehab': 'surgical-rehabilitation',
-    'Women\'s Health': 'womens-health',
-    'Pilates': 'pilates',
-    'Cupping Therapy': 'cupping-therapy',
-    'Dry Needling': 'dry-needling',
-    'Kinesio Taping': 'kinesio-taping',
-    'Chiropractic Care': 'chiropractic-care',
-    'IASTM': 'iastm'
-};
+// 1. Hero Slider
+const slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
 
-// 1. Auto-Scroll Services Carousel
+function nextSlide() {
+    if (slides.length === 0) return;
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+}
+
+if (slides.length > 0) {
+    setInterval(nextSlide, 4000);
+}
+
+// 2. Services Carousel
 let carouselPosition = 0;
 const carousel = document.getElementById('servicesCarousel');
 
 function moveCarousel(direction) {
     const slides = document.querySelectorAll('.service-slide');
-    const slideWidth = 295;
+    const slideWidth = 350;
     
     if (carousel) {
         carousel.style.animation = 'none';
-        
         carouselPosition += direction * slideWidth;
         const maxScroll = -(slideWidth * (slides.length - 3));
         
@@ -44,113 +42,71 @@ function moveCarousel(direction) {
     }
 }
 
-// 2. Service Click Handler - Navigate to Specific Service
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.service-slide').forEach(slide => {
-        slide.addEventListener('click', function() {
-            const serviceName = this.querySelector('h3').textContent.trim();
-            const serviceSlug = serviceMap[serviceName];
-            
-            if (serviceSlug) {
-                // Navigate to services page with hash
-                window.location.href = `services.html#${serviceSlug}`;
-            } else {
-                // Fallback to services page
-                window.location.href = 'services.html';
-            }
-        });
-        
-        // Add pointer cursor
-        slide.style.cursor = 'pointer';
-    });
-});
-
-// 3. Continuous Animated Counter for Stats
-let counterAnimations = {};
-
-function animateCountersContinuously() {
+// 3. Animated Counters (Gentle - No excessive rotation)
+function animateCounters() {
     const counters = document.querySelectorAll('.stat-number');
     
-    counters.forEach((counter, index) => {
-        const target = parseInt(counter.getAttribute('data-count'));
-        
-        if (counterAnimations[index]) {
-            cancelAnimationFrame(counterAnimations[index].id);
-        }
-        
-        let current = 0;
+    counters.forEach(counter => {
+        const target = parseFloat(counter.getAttribute('data-count'));
         const duration = 2000;
-        const pauseDuration = 3000;
         const increment = target / (duration / 16);
+        let current = 0;
         
-        const animateUp = () => {
+        const updateCounter = () => {
             current += increment;
             if (current < target) {
-                counter.textContent = Math.ceil(current);
-                counterAnimations[index] = {
-                    id: requestAnimationFrame(animateUp)
-                };
+                if (target < 10) {
+                    counter.textContent = current.toFixed(1);
+                } else {
+                    counter.textContent = Math.ceil(current);
+                }
+                requestAnimationFrame(updateCounter);
             } else {
-                counter.textContent = target;
-                setTimeout(() => {
-                    current = 0;
-                    counterAnimations[index] = {
-                        id: requestAnimationFrame(animateUp)
-                    };
-                }, pauseDuration);
+                if (target < 10) {
+                    counter.textContent = target.toFixed(1);
+                } else {
+                    counter.textContent = Math.ceil(target);
+                }
             }
         };
         
-        animateUp();
+        updateCounter();
     });
 }
 
-// 4. Scroll Animation Observer
+// 4. Scroll Observer
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -80px 0px'
+    threshold: 0.2,
+    rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('aos-animate');
-            
             if (entry.target.closest('.stats-section')) {
-                animateCountersContinuously();
+                animateCounters();
+                observer.unobserve(entry.target);
             }
         }
     });
 }, observerOptions);
 
-document.querySelectorAll('[data-aos]').forEach(el => {
-    observer.observe(el);
-});
-
-// 5. Stats Section Observer
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCountersContinuously();
-        } else {
-            Object.values(counterAnimations).forEach(animation => {
-                if (animation && animation.id) {
-                    cancelAnimationFrame(animation.id);
-                }
-            });
-            counterAnimations = {};
-        }
-    });
-}, {
-    threshold: 0.2
-});
-
 const statsSection = document.querySelector('.stats-section');
 if (statsSection) {
-    statsObserver.observe(statsSection);
+    observer.observe(statsSection);
 }
 
-// 6. Smooth Scroll for Internal Links
+// 5. Service Click Handler
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.service-slide').forEach(slide => {
+        slide.addEventListener('click', function() {
+            window.location.href = 'services.html';
+        });
+        slide.style.cursor = 'pointer';
+    });
+});
+
+// 6. Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -164,32 +120,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// 7. Google Maps Integration
-document.addEventListener('DOMContentLoaded', function() {
-    const mapsUrl = 'https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUqBggDEEUYOzIGCAAQRRg8MgYIARBFGEEyBggCEEUYOzIGCAMQRRg7MgYIBBBFGDwyBggFEEUYPDIGCAYQRRg8MgYIBxBFGDzSAQgyODIwajBqN6gCALACAA&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KfWw1QLtqRk6Med1gOOOf_ha&daddr=First+Floor,+Kalinga+Vihar,+Plot+No+-+K4/891,+near+Shiva+Temple,+Kalinga+Vihar+LIG,+Kalinganagar,+Bhubaneswar,+Odisha+751028';
-    
-    document.querySelectorAll('.info-link').forEach(link => {
-        if (link.textContent.includes('Directions') || link.textContent.includes('directions')) {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.open(mapsUrl, '_blank');
-            });
-        }
-    });
-});
-
-// 8. Parallax Effect for Hero
-window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    const heroContent = document.querySelector('.hero-content-new');
-    
-    if (heroContent && scrolled < window.innerHeight) {
-        heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-        heroContent.style.opacity = 1 - (scrolled / 600);
+// 7. Nav Scroll Effect
+window.addEventListener('scroll', function() {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
     }
 });
 
-// 9. Mobile Menu Handler
+// 8. Mobile Menu
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+
+// 9. Mobile Menu Close on Link Click
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         const navLinks = document.querySelector('.nav-links');
@@ -199,51 +146,12 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// 10. Enhanced Navigation Scroll Effect
-window.addEventListener('scroll', function() {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 100) {
-        nav.classList.add('scrolled');
-    } else {
-        nav.classList.remove('scrolled');
-    }
-});
-
-// 11. View All Services Button Handler
-document.addEventListener('DOMContentLoaded', function() {
-    const viewAllBtn = document.querySelector('.btn-view-all');
-    
-    if (viewAllBtn) {
-        viewAllBtn.addEventListener('click', function(e) {
-            const servicesSection = document.querySelector('.services-carousel-section');
-            if (servicesSection && this.getAttribute('href') !== 'services.html') {
-                e.preventDefault();
-                servicesSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-                
-                setTimeout(() => {
-                    window.location.href = 'services.html';
-                }, 1000);
-            }
-        });
-    }
-});
-
-// 12. Add Loading Animation
+// 10. Page Load
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
-    
-    document.querySelectorAll('[data-aos]').forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight) {
-            el.classList.add('aos-animate');
-        }
-    });
 });
 
-// 13. Mobile Carousel Speed
+// 11. Mobile Carousel Speed
 if (window.innerWidth <= 768) {
     const carousel = document.getElementById('servicesCarousel');
     if (carousel) {
@@ -251,78 +159,4 @@ if (window.innerWidth <= 768) {
     }
 }
 
-// 14. Preload Images
-function preloadImages() {
-    const images = document.querySelectorAll('.service-image');
-    images.forEach(img => {
-        const bgImage = img.style.backgroundImage;
-        if (bgImage) {
-            const url = bgImage.replace(/url\(['"]?(.*?)['"]?\)/i, '$1');
-            const image = new Image();
-            image.src = url;
-        }
-    });
-}
-
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', preloadImages);
-} else {
-    preloadImages();
-}
-
-// 15. Hamburger Menu Toggle
-function toggleMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
-}
-
-// 16. 3D Card Tilt Effect (Optional Enhancement)
-document.addEventListener('DOMContentLoaded', function() {
-    const cards3D = document.querySelectorAll('.info-card-new, .stat-card-new, .why-card');
-    
-    cards3D.forEach(card => {
-        card.addEventListener('mousemove', function(e) {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = (y - centerY) / 10;
-            const rotateY = (centerX - x) / 10;
-            
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px)`;
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            card.style.transform = '';
-        });
-    });
-});
-
-// 17. Pie Chart Animation
-document.addEventListener('DOMContentLoaded', function() {
-    const pieChart = document.querySelector('.pie-chart');
-    
-    if (pieChart) {
-        const chartObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    pieChart.style.animation = 'rotate-chart 20s linear infinite';
-                } else {
-                    pieChart.style.animation = 'none';
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        chartObserver.observe(pieChart);
-    }
-});
-
-console.log('✨ Dr. Neha\'s Clinic - Ultra-Modern Design Loaded!');
-console.log('🎯 Service-specific navigation enabled');
-console.log('📊 Continuous counter animations active');
-console.log('🗺️ Google Maps integration ready');
-console.log('🎨 3D card effects active');
-console.log('📈 Pie chart animations ready');
+console.log('✨ Dr. Neha\'s Clinic - Homepage Loaded!');

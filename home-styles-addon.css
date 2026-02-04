@@ -1,0 +1,558 @@
+/* ULTRA-MODERN ENHANCEMENTS - ADD THIS TO YOUR EXISTING home-styles.css */
+/* This works with your current HTML structure */
+
+/* === Book Appointment in Navigation === */
+.nav-links li:last-child a {
+    background: var(--gradient-primary);
+    color: white !important;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(117, 43, 172, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-links li:last-child a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.nav-links li:last-child a:hover::before {
+    left: 100%;
+}
+
+.nav-links li:last-child a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(117, 43, 172, 0.4);
+}
+
+.nav-links li:last-child a::after {
+    display: none !important;
+}
+
+/* Remove the fixed floating button */
+.fixed-book-btn {
+    display: none !important;
+}
+
+/* === 3D Info Cards (3 in one line) === */
+.info-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+}
+
+.info-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 40px 28px;
+    border-radius: 25px;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(117, 43, 172, 0.1);
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        transparent,
+        rgba(117, 43, 172, 0.1),
+        transparent 30%
+    );
+    animation: rotate 4s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+@keyframes rotate {
+    100% { transform: rotate(360deg); }
+}
+
+.info-card:hover::before {
+    opacity: 1;
+}
+
+.info-card:hover {
+    transform: translateY(-20px) translateZ(50px) rotateX(5deg);
+    box-shadow: 
+        0 30px 80px rgba(117, 43, 172, 0.25),
+        0 0 0 2px var(--primary);
+    border-color: var(--accent);
+}
+
+.icon-box {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    margin: 0 auto 25px;
+    transition: all 0.5s ease;
+    box-shadow: 0 10px 30px rgba(117, 43, 172, 0.3);
+}
+
+.info-card:hover .icon-box {
+    background: var(--gradient-accent);
+    transform: scale(1.2) rotate(360deg);
+    box-shadow: 0 15px 40px rgba(118, 185, 0, 0.4);
+}
+
+/* === Scroll Indicator - Right Corner === */
+.scroll-indicator {
+    position: absolute !important;
+    bottom: 30px !important;
+    right: 40px !important;
+    left: auto !important;
+    transform: none !important;
+    z-index: 10;
+    text-align: center;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* === Vision Section with Pie Chart === */
+.vision-section {
+    padding: 80px 0;
+}
+
+.vision-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.vision-text {
+    text-align: left;
+}
+
+.vision-chart {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.pie-chart {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--primary) 0deg 144deg,
+        var(--accent) 144deg 252deg,
+        #FFD93D 252deg 324deg,
+        #FF6B6B 324deg 360deg
+    );
+    box-shadow: 
+        0 20px 60px rgba(117, 43, 172, 0.3),
+        inset 0 -10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: rotate-chart 20s linear infinite;
+}
+
+@keyframes rotate-chart {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.chart-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.chart-center-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+}
+
+.chart-center-label {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.chart-legend {
+    position: absolute;
+    right: -120px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    white-space: nowrap;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.legend-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* === 3D Gradient Stats Cards === */
+.stats-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.stat-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f0f0f0 100%);
+    padding: 40px 25px;
+    border-radius: 25px;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 
+        0 15px 45px rgba(0, 0, 0, 0.1),
+        inset 0 -5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+}
+
+.stat-card:nth-child(2)::before {
+    background: var(--gradient-accent);
+}
+
+.stat-card:nth-child(3)::before {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 100%);
+}
+
+.stat-card:nth-child(4)::before {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.stat-card:hover::before {
+    transform: scaleX(1);
+}
+
+.stat-card:hover {
+    transform: translateY(-15px) translateZ(30px) scale(1.05);
+    box-shadow: 
+        0 25px 70px rgba(117, 43, 172, 0.25),
+        inset 0 -8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.stat-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+    box-shadow: 0 10px 30px rgba(117, 43, 172, 0.3);
+    transition: all 0.5s ease;
+}
+
+.stat-card:nth-child(2) .stat-icon {
+    background: var(--gradient-accent);
+    box-shadow: 0 10px 30px rgba(118, 185, 0, 0.3);
+}
+
+.stat-card:nth-child(3) .stat-icon {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 100%);
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+}
+
+.stat-card:nth-child(4) .stat-icon {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    box-shadow: 0 10px 30px rgba(245, 87, 108, 0.3);
+}
+
+.stat-card:hover .stat-icon {
+    transform: scale(1.15) rotate(360deg);
+}
+
+.stat-number {
+    font-size: 3rem !important;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+    margin: 15px 0 10px 0;
+    display: inline;
+}
+
+.stat-plus {
+    font-size: 2rem;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+/* === Why Choose Cards - Creative === */
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.why-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 35px 25px;
+    border-radius: 25px;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    border: 2px solid transparent;
+}
+
+.why-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent, rgba(117, 43, 172, 0.05), transparent);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.why-card:hover::before {
+    opacity: 1;
+}
+
+.why-card:hover {
+    transform: translateY(-15px) translateZ(40px) rotateX(10deg);
+    box-shadow: 
+        0 25px 60px rgba(117, 43, 172, 0.2),
+        inset 0 2px 0 rgba(255, 255, 255, 1);
+    border-color: var(--accent);
+}
+
+.why-icon {
+    width: 75px;
+    height: 75px;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    margin: 0 auto 20px;
+    transition: all 0.5s ease;
+    box-shadow: 0 10px 30px rgba(117, 43, 172, 0.3);
+}
+
+.why-card:hover .why-icon {
+    transform: scale(1.1) rotate(10deg);
+    background: var(--gradient-accent);
+}
+
+/* === Dr. Neha Circular Image === */
+.doctor-image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.doctor-main-image,
+.founder-img {
+    width: 350px !important;
+    height: 350px !important;
+    border-radius: 50% !important;
+    object-fit: cover;
+    border: 8px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                var(--gradient-primary) border-box;
+    box-shadow: 
+        0 20px 60px rgba(117, 43, 172, 0.25),
+        0 0 0 15px rgba(117, 43, 172, 0.05);
+    transition: all 0.5s ease;
+}
+
+.doctor-main-image:hover,
+.founder-img:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 30px 80px rgba(117, 43, 172, 0.35),
+        0 0 0 20px rgba(118, 185, 0, 0.08);
+}
+
+.doctor-image-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        var(--primary),
+        var(--accent),
+        var(--primary)
+    );
+    z-index: -1;
+    animation: rotate 8s linear infinite;
+    opacity: 0.2;
+}
+
+/* Hide the badge */
+.doctor-badge-float {
+    display: none !important;
+}
+
+/* === Responsive === */
+@media (max-width: 1200px) {
+    .chart-legend {
+        position: static;
+        transform: none;
+        margin-top: 30px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .vision-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1024px) {
+    .info-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .chart-container {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .chart-center {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .chart-center-number {
+        font-size: 2.5rem;
+    }
+    
+    .doctor-main-image,
+    .founder-img {
+        width: 280px !important;
+        height: 280px !important;
+    }
+    
+    .doctor-image-wrapper::before {
+        width: 320px;
+        height: 320px;
+    }
+    
+    .scroll-indicator {
+        right: 20px !important;
+        bottom: 25px !important;
+    }
+}

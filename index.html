@@ -8,15 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="home-styles.css">
+    <link rel="stylesheet" href="home-styles-ultra.css">
 </head>
 <body>
-
-    <!-- Fixed Book Appointment Button (Like Samson Agri) -->
-    <a href="enquire.html" class="fixed-book-btn">
-        <i class="fa-solid fa-calendar-check"></i>
-        <span>Book Appointment</span>
-    </a>
 
     <nav>
         <div class="container nav-container">
@@ -33,11 +27,12 @@
                 <li><a href="reviews.html">Reviews</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="career.html">Career</a></li>
+                <li><a href="enquire.html" class="nav-book-btn">Book Appointment</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- HERO SECTION WITH AUTO-PLAYING SERVICES -->
+    <!-- HERO SECTION -->
     <header class="hero-new">
         <div class="hero-slider">
             <div class="slide active" style="background-image: url('clinic-1.jpg');"></div>
@@ -59,7 +54,7 @@
             </div>
         </div>
         
-        <!-- Scroll Down Indicator -->
+        <!-- Scroll Down Indicator - Right Corner -->
         <div class="scroll-indicator">
             <div class="mouse">
                 <div class="wheel"></div>
@@ -68,7 +63,7 @@
         </div>
     </header>
 
-    <!-- INFO CARDS (Enhanced) -->
+    <!-- 3D POPPING INFO CARDS - All 3 in One Line -->
     <section class="info-section-new">
         <div class="container">
             <div class="info-grid-new">
@@ -78,7 +73,7 @@
                     </div>
                     <h3>Visit Us</h3>
                     <p>K4-891, Kalinga Vihar<br>Bhubaneswar, Odisha</p>
-                    <a href="https://maps.google.com" target="_blank" class="info-link">Get Directions →</a>
+                    <a href="#" class="info-link">Get Directions →</a>
                 </div>
                 
                 <div class="info-card-new" data-aos="fade-up" data-aos-delay="100">
@@ -102,7 +97,7 @@
         </div>
     </section>
 
-    <!-- AUTO-PLAYING SERVICES CAROUSEL (Like Samson Agri Products) -->
+    <!-- AUTO-PLAYING SERVICES CAROUSEL -->
     <section class="services-carousel-section">
         <div class="container">
             <div class="section-header-new" data-aos="fade-up">
@@ -224,32 +219,62 @@
         </div>
     </section>
 
-    <!-- OUR VISION SECTION -->
+    <!-- VISION SECTION WITH PIE CHART -->
     <section class="vision-section-new">
         <div class="container">
-            <div class="vision-content-new" data-aos="fade-up">
-                <span class="section-badge">Our Mission</span>
-                <h2>Transforming Lives Through Expert Care</h2>
-                <p>Started in the year 2022 with a vision by Dr. Neha, our clinic aims to provide world-class physiotherapy services to the people of Bhubaneswar. We believe in a holistic approach that combines modern technology with compassionate care to restore movement and improve quality of life.</p>
-                <div class="vision-features">
-                    <div class="vision-feature-item">
-                        <i class="fa-solid fa-check-circle"></i>
-                        <span>Evidence-Based Treatment</span>
+            <div class="vision-flex-container" data-aos="fade-up">
+                <div class="vision-content-new">
+                    <span class="section-badge">Our Mission</span>
+                    <h2>Transforming Lives Through Expert Care</h2>
+                    <p>Started in the year 2022 with a vision by Dr. Neha, our clinic aims to provide world-class physiotherapy services to the people of Bhubaneswar. We believe in a holistic approach that combines modern technology with compassionate care to restore movement and improve quality of life.</p>
+                    <div class="vision-features">
+                        <div class="vision-feature-item">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Evidence-Based Treatment</span>
+                        </div>
+                        <div class="vision-feature-item">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Advanced Technology</span>
+                        </div>
+                        <div class="vision-feature-item">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Personalized Care Plans</span>
+                        </div>
                     </div>
-                    <div class="vision-feature-item">
-                        <i class="fa-solid fa-check-circle"></i>
-                        <span>Advanced Technology</span>
+                </div>
+                
+                <div class="vision-chart-side">
+                    <div class="chart-container">
+                        <div class="pie-chart"></div>
+                        <div class="chart-center">
+                            <div class="chart-center-number">98%</div>
+                            <div class="chart-center-label">Success Rate</div>
+                        </div>
                     </div>
-                    <div class="vision-feature-item">
-                        <i class="fa-solid fa-check-circle"></i>
-                        <span>Personalized Care Plans</span>
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: var(--primary);"></div>
+                            <div class="legend-text">Ortho: 40%</div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: var(--accent);"></div>
+                            <div class="legend-text">Sports: 30%</div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #FFD93D;"></div>
+                            <div class="legend-text">Neuro: 20%</div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #FF6B6B;"></div>
+                            <div class="legend-text">Others: 10%</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ANIMATED STATS SECTION (Like Samson Agri) -->
+    <!-- 3D GRADIENT STATS SECTION - Icon Top, Number Below -->
     <section class="stats-section">
         <div class="container">
             <div class="stats-grid">
@@ -258,43 +283,58 @@
                     <div class="stat-icon-new">
                         <i class="fa-solid fa-users"></i>
                     </div>
-                    <div class="stat-number" data-count="500">0</div>
-                    <div class="stat-plus">+</div>
-                    <div class="stat-label">Happy Patients</div>
+                    <div class="stat-content">
+                        <div class="stat-number-line">
+                            <span class="stat-number" data-count="500">0</span>
+                            <span class="stat-plus">+</span>
+                        </div>
+                        <div class="stat-label">Happy Patients</div>
+                    </div>
                 </div>
 
                 <div class="stat-card-new" data-aos="zoom-in" data-aos-delay="100">
                     <div class="stat-icon-new">
                         <i class="fa-solid fa-user-doctor"></i>
                     </div>
-                    <div class="stat-number" data-count="20">0</div>
-                    <div class="stat-plus">+</div>
-                    <div class="stat-label">Expert Team Members</div>
+                    <div class="stat-content">
+                        <div class="stat-number-line">
+                            <span class="stat-number" data-count="20">0</span>
+                            <span class="stat-plus">+</span>
+                        </div>
+                        <div class="stat-label">Expert Team Members</div>
+                    </div>
                 </div>
 
                 <div class="stat-card-new" data-aos="zoom-in" data-aos-delay="200">
                     <div class="stat-icon-new">
                         <i class="fa-solid fa-award"></i>
                     </div>
-                    <div class="stat-number" data-count="4">0</div>
-                    <div class="stat-plus">+</div>
-                    <div class="stat-label">Years of Excellence</div>
+                    <div class="stat-content">
+                        <div class="stat-number-line">
+                            <span class="stat-number" data-count="4">0</span>
+                            <span class="stat-plus">+</span>
+                        </div>
+                        <div class="stat-label">Years of Excellence</div>
+                    </div>
                 </div>
 
                 <div class="stat-card-new" data-aos="zoom-in" data-aos-delay="300">
                     <div class="stat-icon-new">
                         <i class="fa-solid fa-star"></i>
                     </div>
-                    <div class="stat-number" data-count="4">0</div>
-                    <div class="stat-label-decimal">.9 Star Rating</div>
-                    <div class="stat-label">Google Reviews</div>
+                    <div class="stat-content">
+                        <div class="stat-number-line">
+                            <span class="stat-label-decimal">4.9</span>
+                        </div>
+                        <div class="stat-label">Star Rating</div>
+                    </div>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- WHY CHOOSE US SECTION -->
+    <!-- WHY CHOOSE US SECTION - Creative 3D Cards -->
     <section class="why-choose-new">
         <div class="container">
             <div class="section-header-new text-center" data-aos="fade-up">
@@ -340,25 +380,20 @@
         </div>
     </section>
 
-    <!-- MEET DR. NEHA SECTION (With Visible Photo) -->
+    <!-- MEET DR. NEHA SECTION - CIRCULAR IMAGE -->
     <section class="meet-doctor-section">
         <div class="container">
             <div class="doctor-container">
                 <div class="doctor-image-side" data-aos="fade-right">
                     <div class="doctor-image-wrapper">
-                        <!-- REPLACE WITH YOUR ACTUAL DR. NEHA IMAGE -->
                         <img src="dr-neha.JPG" alt="Dr. Neha" class="doctor-main-image">
-                        <div class="doctor-badge-float">
-                            <i class="fa-solid fa-certificate"></i>
-                            <span>MPT Ortho</span>
-                        </div>
                     </div>
                 </div>
 
                 <div class="doctor-content-side" data-aos="fade-left">
                     <span class="section-badge">Meet Our Founder</span>
                     <h2>Dr. Neha</h2>
-                    <p class="doctor-designation">Lead Physiotherapist • MPT Ortho</p>
+                    <p class="doctor-designation">Lead Physiotherapist</p>
                     <p class="doctor-bio">Dr. Neha is a dedicated specialist with years of experience in treating complex orthopaedic and neurological conditions. Her passion for helping patients achieve pain-free lives drives our clinic's commitment to excellence. She combines evidence-based practices with compassionate care to deliver outstanding results.</p>
                     
                     <div class="doctor-achievements">
@@ -428,6 +463,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <script src="home-animations.js"></script>
+    <script src="home-animations-ultra.js"></script>
 </body>
 </html>

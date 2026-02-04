@@ -834,3 +834,111 @@ h2::after,
         height: 130px;
     }
 }
+/* ===============================
+   GLOBAL UX FIXES
+================================ */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+section {
+  overflow-x: hidden;
+}
+
+/* Smooth interactions */
+.wow-card,
+.wow-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+}
+
+.wow-card.active,
+.wow-fade.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===============================
+   INFO CARDS – SIZE & DEPTH FIX
+================================ */
+.info-card-new {
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.info-card-new:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+}
+
+/* ===============================
+   SERVICES CAROUSEL – MOBILE FIX
+================================ */
+.service-slide {
+  min-width: 260px;
+  max-width: 300px;
+}
+
+@media (max-width: 768px) {
+  .services-carousel {
+    gap: 16px;
+  }
+}
+
+/* ===============================
+   STATS SECTION – LOAD BUG FIX
+================================ */
+.stat-card-new {
+  min-height: auto;
+}
+
+.stat-number {
+  font-size: clamp(32px, 5vw, 48px);
+}
+
+/* ===============================
+   WHY CHOOSE US – CARD BALANCE
+================================ */
+.why-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* ===============================
+   MEET DOCTOR – VISIBILITY FIX
+================================ */
+.doctor-container {
+  align-items: center;
+}
+
+.doctor-image-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.doctor-main-image {
+  max-width: 420px;
+  margin: auto;
+}
+
+/* ===============================
+   MOBILE STACKING FIX
+================================ */
+@media (max-width: 768px) {
+  .doctor-container,
+  .vision-content {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+
+  .doctor-main-image {
+    margin-bottom: 24px;
+  }
+}

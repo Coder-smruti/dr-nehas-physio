@@ -1,4 +1,4 @@
-/* HOME ANIMATIONS - COMPLETE FILE */
+/* FINAL HOME ANIMATIONS - WORKING COUNTERS */
 
 // 1. Hero Slider
 const slides = document.querySelectorAll('.slide');
@@ -20,89 +20,75 @@ let carouselPosition = 0;
 const carousel = document.getElementById('servicesCarousel');
 
 function moveCarousel(direction) {
+    if (!carousel) return;
+    const slideWidth = 345;
+    carousel.style.animation = 'none';
+    carouselPosition += direction * slideWidth;
     const slides = document.querySelectorAll('.service-slide');
-    const slideWidth = 350;
+    const maxScroll = -(slideWidth * (slides.length - 3));
     
-    if (carousel) {
-        carousel.style.animation = 'none';
-        carouselPosition += direction * slideWidth;
-        const maxScroll = -(slideWidth * (slides.length - 3));
-        
-        if (carouselPosition > 0) {
-            carouselPosition = maxScroll;
-        } else if (carouselPosition < maxScroll) {
-            carouselPosition = 0;
-        }
-        
-        carousel.style.transform = `translateX(${carouselPosition}px)`;
-        
-        setTimeout(() => {
-            carousel.style.animation = 'autoScroll 40s linear infinite';
-        }, 5000);
-    }
+    if (carouselPosition > 0) carouselPosition = maxScroll;
+    else if (carouselPosition < maxScroll) carouselPosition = 0;
+    
+    carousel.style.transform = `translateX(${carouselPosition}px)`;
+    setTimeout(() => {
+        carousel.style.animation = 'autoScroll 40s linear infinite';
+    }, 5000);
 }
 
-// 3. Animated Counters (Gentle - No excessive rotation)
-function animateCounters() {
-    const counters = document.querySelectorAll('.stat-number');
+// 3. FIXED COUNTER ANIMATION
+function animateCounter(element) {
+    const target = parseFloat(element.getAttribute('data-target'));
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
     
-    counters.forEach(counter => {
-        const target = parseFloat(counter.getAttribute('data-count'));
-        const duration = 2000;
-        const increment = target / (duration / 16);
-        let current = 0;
-        
-        const updateCounter = () => {
-            current += increment;
-            if (current < target) {
-                if (target < 10) {
-                    counter.textContent = current.toFixed(1);
-                } else {
-                    counter.textContent = Math.ceil(current);
-                }
-                requestAnimationFrame(updateCounter);
+    const update = () => {
+        current += step;
+        if (current < target) {
+            if (target < 10) {
+                element.textContent = current.toFixed(1);
             } else {
-                if (target < 10) {
-                    counter.textContent = target.toFixed(1);
-                } else {
-                    counter.textContent = Math.ceil(target);
-                }
+                element.textContent = Math.ceil(current);
             }
-        };
-        
-        updateCounter();
-    });
-}
-
-// 4. Scroll Observer
-const observerOptions = {
-    threshold: 0.2,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            if (entry.target.closest('.stats-section')) {
-                animateCounters();
-                observer.unobserve(entry.target);
+            requestAnimationFrame(update);
+        } else {
+            if (target < 10) {
+                element.textContent = target.toFixed(1);
+            } else {
+                element.textContent = Math.ceil(target);
             }
         }
-    });
-}, observerOptions);
+    };
+    update();
+}
 
-const statsSection = document.querySelector('.stats-section');
+// 4. Observe Stats Section
+let hasAnimated = false;
+
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !hasAnimated) {
+            hasAnimated = true;
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                animateCounter(counter);
+            });
+        }
+    });
+}, {
+    threshold: 0.3
+});
+
+const statsSection = document.getElementById('statsSection');
 if (statsSection) {
-    observer.observe(statsSection);
+    statsObserver.observe(statsSection);
 }
 
 // 5. Service Click Handler
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.service-slide').forEach(slide => {
-        slide.addEventListener('click', function() {
-            window.location.href = 'services.html';
-        });
-        slide.style.cursor = 'pointer';
+document.querySelectorAll('.service-slide').forEach(slide => {
+    slide.addEventListener('click', () => {
+        window.location.href = 'services.html';
     });
 });
 
@@ -112,16 +98,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            target.scrollIntoView({ behavior: 'smooth' });
         }
     });
 });
 
 // 7. Nav Scroll Effect
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');
     if (window.scrollY > 50) {
         nav.classList.add('scrolled');
@@ -136,7 +119,7 @@ function toggleMenu() {
     navLinks.classList.toggle('active');
 }
 
-// 9. Mobile Menu Close on Link Click
+// 9. Close menu on link click
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         const navLinks = document.querySelector('.nav-links');
@@ -146,17 +129,27 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// 10. Page Load
+// 10. WOW Animation on Scroll
+const wowObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }, index * 100);
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.wow-card, .wow-fade').forEach(el => {
+    wowObserver.observe(el);
+});
+
+// 11. Page Load
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
 
-// 11. Mobile Carousel Speed
-if (window.innerWidth <= 768) {
-    const carousel = document.getElementById('servicesCarousel');
-    if (carousel) {
-        carousel.style.animation = 'autoScroll 30s linear infinite';
-    }
-}
-
-console.log('✨ Dr. Neha\'s Clinic - Homepage Loaded!');
+console.log('✨ Dr. Neha\'s Clinic - WOW Homepage Loaded!');
+console.log('✅ Counter animations ready');
+console.log('✅ All sections optimized');
